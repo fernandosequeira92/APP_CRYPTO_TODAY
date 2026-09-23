@@ -1,0 +1,48 @@
+  #sigla_logo{
+    background-color: #00AAFF;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    /* color: white; */
+    color: #212529;
+    /* font-family: "Cursive"; */
+    font-weight: bold;
+    /* box-shadow: 2px 2px #aaaaaa; */
+  }
+
+  @media screen and (max-width: 600px) {
+    #sigla_nome {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+    }
+  }
+
+.nav-item{
+  /* background-color: red; */
+  /* border-radius: 50px; */
+  border: 1px solid #212529;
+  transform:scale(1.0,1.0);
+  transition: 0.25s;
+  }
+ 
+.nav-link.active {
+  /* font-weight: bold; */
+  background-color: #00AAFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* border-radius: 50px; */
+  transform:scale(1,1);
+    transition: 0.25s;
+}
+  
+.nav-item:hover{
+    border: 1.5px solid #00AAFF;
+    border-color: #00AAFF;
+    /* border-radius: 50px; */
+    transform:scale(1.1,1.1);
+    transition: 0.25s;
+
+}  

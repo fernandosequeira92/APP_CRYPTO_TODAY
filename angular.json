@@ -23,6 +23,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/cryptocurrency-icons/svg",
+                "output": "crypto-icons"
               }
             ],
             "styles": [

@@ -24,7 +24,7 @@ import { CurrencyPipe, DecimalPipe } from '@angular/common';
     MatIconModule,
     MatButtonModule,
     MatCardModule
-  ]
+]
 })
 
 export class DashboardComponent implements OnInit {
@@ -65,47 +65,48 @@ export class DashboardComponent implements OnInit {
 /* Descrição: Metodo que é executado após a inicialização do componente.                  */
 /******************************************************************************************/
   ngOnInit(): void {
-    this.carregarCriptos();
+    this.cryptoService.getJSONData();
+    this.cryptoService.carregarCriptosUnity('btc');
   }
 
-/******************************************************************************************/
-/* Método: getJSONData()                                                                  */
-/* ---------------------------------------------------------------------------------------*/
-/* Descrição: Recebe dados de criptomoedas no formato JSON.                               */
-/******************************************************************************************/
-  getJSONData(): void {
-    this.cryptoService.getPrices().subscribe({
-      next: (dados) => {
-        console.log(dados);
-      },
+// /******************************************************************************************/
+// /* Método: getJSONData()                                                                  */
+// /* ---------------------------------------------------------------------------------------*/
+// /* Descrição: Recebe dados de criptomoedas no formato JSON.                               */
+// /******************************************************************************************/
+//   getJSONData(): void {
+//     this.cryptoService.getPrices().subscribe({
+//       next: (dados) => {
+//         console.log(dados);
+//       },
 
-      error: (erro) => {
-        console.error('Erro ao buscar criptomoedas:', erro);
-      }
-    });
-  }
+//       error: (erro) => {
+//         console.error('Erro ao buscar criptomoedas:', erro);
+//       }
+//     });
+//   }
 
-/******************************************************************************************/
-/* Método: carregarCriptos()                                                              */
-/* ---------------------------------------------------------------------------------------*/
-/* Descrição: Carrega os dados das criptomoedas.                                          */
-/******************************************************************************************/
-  carregarCriptos(): void {
+// /******************************************************************************************/
+// /* Método: carregarCriptos()                                                              */
+// /* ---------------------------------------------------------------------------------------*/
+// /* Descrição: Carrega os dados das criptomoedas.                                          */
+// /******************************************************************************************/
+//   carregarCriptos(): void {
 
-    this.cryptoService.getPrices().subscribe({
-      next: (dados) => {
+//     this.cryptoService.getPrices().subscribe({
+//       next: (dados) => {
 
-        this.bitcoin = dados.bitcoin;
-        this.ethereum = dados.ethereum;
-        this.xrp = dados.ripple;
-        this.solana = dados.solana;
+//         this.bitcoin = dados.bitcoin;
+//         this.ethereum = dados.ethereum;
+//         this.xrp = dados.ripple;
+//         this.solana = dados.solana;
 
-      },
+//       },
 
-      error: (erro) => {
-        console.error('Erro ao carregar criptomoedas', erro);
-      }
-    });
-  }
+//       error: (erro) => {
+//         console.error('Erro ao carregar criptomoedas', erro);
+//       }
+//     });
+//   }
 
 }

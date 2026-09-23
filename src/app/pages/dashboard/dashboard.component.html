@@ -1,31 +1,35 @@
-        <!-- CARD DE TESTE PARA BITCOIN -->
-        <mat-card>
-          <mat-card-header> <mat-card-title> Bitcoin </mat-card-title> </mat-card-header>
-          <mat-card-content> 
+<!-- CARD DE TESTE PARA BITCOIN -->
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> Bitcoin </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <h2>
+      {{ bitcoin?.brl | currency: "BRL" }}
+    </h2>
 
-            <h2>
-              {{ bitcoin?.brl | currency:'BRL' }}
-            </h2>
-
-            <p>
-              24h:
-              {{ bitcoin?.brl_24h_change | number:'1.2-2' }}%
-            </p>
-
-          </mat-card-content>
-        </mat-card>
+    <p>
+      24h:
+      {{ bitcoin?.brl_24h_change | number: "1.2-2" }}%
+    </p>
+  </mat-card-content>
+</mat-card>
 
 <div class="grid-container">
   <h1 class="mat-h1">Dashboard</h1>
   <mat-grid-list cols="2" rowHeight="350px">
     @for (card of cards | async; track card) {
       <mat-grid-tile [colspan]="card.cols" [rowspan]="card.rows">
-
         <mat-card class="dashboard-card">
           <mat-card-header>
             <mat-card-title>
-              {{card.title}}
-              <button matIconButton class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              {{ card.title }}
+              <button
+                matIconButton
+                class="more-button"
+                [matMenuTriggerFor]="menu"
+                aria-label="Toggle menu"
+              >
                 <mat-icon>more_vert</mat-icon>
               </button>
 
@@ -33,7 +37,6 @@
                 <button mat-menu-item>Expand</button>
                 <button mat-menu-item>Remove</button>
               </mat-menu>
-
             </mat-card-title>
           </mat-card-header>
           <mat-card-content class="dashboard-card-content">
