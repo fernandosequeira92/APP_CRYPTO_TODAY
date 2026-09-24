@@ -3,6 +3,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Crypto } from '../../services/crypto';
 import { CurrencyPipe, DecimalPipe } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-nav-crypto',
@@ -11,6 +12,7 @@ import { CurrencyPipe, DecimalPipe } from '@angular/common';
     CommonModule,
     CurrencyPipe,
     DecimalPipe,
+    MatCardModule,
     RouterLink,         // <--- Adicione aqui
     RouterLinkActive    // <--- Adicione aqui (opcional, mas recomendado)
   ],
